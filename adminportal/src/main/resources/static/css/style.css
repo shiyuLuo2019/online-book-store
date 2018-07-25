@@ -1,0 +1,54 @@
+body {
+    font-family: 'M+ C Type-1 (basic latin) Regular', 'M+ Type-1 (general-j) Regular', sans-serif;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    color: darkslategray;
+    background-color: black;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 90%;
+}
+
+.page-top {
+    margin-top: -70px;
+}
+
+.box {
+    border: 1px solid slategray;
+}
+
+.home-headline {
+
+    font-size: 24px;
+    color: white;
+    margin: auto;
+    text-align: center;
+    /*margin-top: -13px;*/
+}
+
+.home-headline span {
+    background-color: black;
+    padding: 5px 22px;
+}
+
+.section-headline {
+    font-size: 24px;
+    color: white;
+    margin: auto;
+    text-align: center;
+    margin-top: 100px;
+    /*margin-top: -13px;*/
+}
+
+.section-headline span {
+    background-color: black;
+    padding: 5px 22px;
+}

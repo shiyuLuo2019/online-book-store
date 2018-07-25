@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head th:fragment="common-header">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1"/>-->
+
+    <title>Corner Bookstore</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/css/non-responsive.css" rel="stylesheet"/>
+
+    <!--font -->
+    <link rel="stylesheet" type="text/css"
+          href="http://mplus-fonts.sourceforge.jp/webfonts/basic_latin/mplus_webfonts.css">
+    <link rel="stylesheet" type="text/css"
+          href="http://mplus-fonts.sourceforge.jp/webfonts/general-j/mplus_webfonts.css">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/style.css" rel="stylesheet"/>
+
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" />
+
+    <!--icon-->
+    <link rel="icon" href="/image/caticon.png"/>
+
+    <!-- data table -->
+    <link th:href="@{/css/jquery.dataTables.min.css}" rel="stylesheet" />
+    <link th:href="@{/css/dataTables.bootstrap.min.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+<div th:fragment="navbar">
+    <div class="page-top"></div>
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Corner Bookstore</a>
+            </div>
+            <div id="navbar">
+                <!-- left nav bar -->
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Books <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a th:href="@{/bookshelf}">Browse books</a></li>
+                            <li><a href="@{/hours}">Hours &#38; directions</a></li>
+                            <li><a href="@{/faq}">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <form class="navbar-form">
+                        <div class="form-group">
+                            <input type="text" name="keyword" class="form-control" placeholder="Book title"/>
+                        </div>
+                        <button type="submit" class="btn btn-default">search</button>
+                    </form>
+                </ul>
+                <!-- right nav bar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a th:href="@{/shoppingCart/cart}">Shopping cart</a></li>
+                    <li><a sec:authorize="isAnonymous()" th:href="@{/login}">Log in</a></li>
+                    <li><a sec:authorize="isAuthenticated()" th:href="@{/myProfile}">My account</a></li>
+                    <li><a sec:authorize="isAuthenticated()" th:href="@{/logout}">Logout</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
+</div>
+
+<!-- footer -->
+<div th:fragment="footer">
+		<br />
+		<br />
+		<footer>
+			<div class="row">
+				<div class="col-xs-3 footerleft">
+					<div class="logofooter">
+						<a th:href="@{/}"><img class="img-responsive"
+							src="/image/logo.png" style="width: 200px;" /></a>
+					</div>
+					<p>
+						Corner Book Store. <br />
+					</p>
+				</div>
+				<div class="col-xs-3 paddingtop-bottom">
+					<h6 class="heading7">Contact</h6>
+					<ul class="post">
+						<p>
+							<i class="fa fa-map-pin"></i> 42 Ave, Emerald City, The Wonderful Kingdom of Oz<br />
+						</p>
+						<p>
+							<i class="fa fa-phone"></i> Phone (USA) : +1 123-456-789
+						</p>
+						<p>
+							<i class="fa fa-envelope"></i> E-mail: corner.bookstore@yahoo.com
+						</p>
+					</ul>
+				</div>
+				<div class="col-xs-3 paddingtop-bottom">
+					<h6 class="heading7">Links</h6>
+					<ul class="footer-ul">
+						<li><a href="#"> Privacy Policy</a></li>
+						<li><a href="#"> Terms &#38; Conditions</a></li>
+						<li><a href="#"> Frequently Ask Questions</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-3 paddingtop-bottom">
+					<h6 class="heading7">STORE HOURS</h6>
+					<div class="post">
+						<p>Monday - Saturday: 9am - 11pm</p>
+						<p>Sunday: 10am - 10pm</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<div class="copyright">
+			<div class="col-md-6">
+				<p>© 2018 - All Rights Reserved</p>
+			</div>
+			<div class="col-md-6">
+				<ul class="bottom_ul">
+					<li><a href="#">About us</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Faq's</a></li>
+					<li><a href="#">Contact us</a></li>
+					<li><a href="#">Site Map</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<div th:fragment="body-bottom-scripts">
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+
+    <!-- data table -->
+    <script th:src="@{/js/jquery.dataTables.min.js}"></script>
+    <script th:src="@{/js/dataTables.bootstrap.min.js}"></script>
+</div>
+
+</body>
+</html>
